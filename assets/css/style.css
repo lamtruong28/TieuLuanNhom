@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+:root {
+    --height-navbar: 50px;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--height-navbar);
+    display: flex;
+    padding: 0 80px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index: 10;
+}
+
+#main {
+    background-color: #000;
+}
+
+.header__img {
+    width: 50px;
+    cursor: pointer;
+}
+
+.navBar {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.navBar a {
+    text-decoration: none;
+    display: block;
+    padding: 0 16px;
+    line-height: var(--height-navbar);
+    color: #000;
+    border-radius: 2px;
+    overflow: hidden;
+    transition: all linear 0.2s;
+}
+
+.navBar a:hover {
+    background-color: #ccc;
+
+}
+
+/* Css slider */
+
+.tb-slider {
+    border-color: #fff;
+    border-collapse: collapse;
+}
+
+.slider {
+    margin-top: var(--height-navbar);
+    
+}
+
+.slider__img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* CSS menu */
+
+.content__title {
+    padding: 36px 0;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    background-color: rgb(255, 0, 0);
+}
+
+.menu-list__title {
+    display: flex;
+    justify-content:space-around;
+}
+
+.menu-list__category {
+    padding: 24px 0;
+    background-color: #ccc;
+    flex: 1;
+    text-align: center;
+    border: #ddd 1px solid;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    border-bottom: 16px solid #fff;
+}
+
+.item__img {
+    width: 200px;
+    vertical-align: middle;
+}
+
+.item__content {
+    background-color: #f1f1f1;
+    flex: 1;
+    height: 200px;
+}
+
+.item__content p {
+    margin: 8px 20px;
+    font-size: 18px;
+}
+
+.food-name {
+    font-weight: bold;
+}
+
+.price {
+
+}
+
+.promotion {
+
+}
+
+.oder {
+    margin: 0 70px;
+}
+
+.order__option {
+    padding: 4px 8px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.decrease {
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+.quantity {
+}
+
+.increase {
+    cursor: pointer;
+    background-color: #ccc;
+
+}
+
+.btn-order {
+    display: block;
+    margin: 12px 0 0 12px;
+    padding: 4px 8px;
+    border: none;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
