@@ -7,16 +7,47 @@
 html {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
+    color: var(--txt-color);
+}
+:root {
+    --primary-color: #eb522c;
+    --height-navbar: 60px;
+    --txt-color: #333;
+}
+
+.btn {
+    border: none;
+    text-decoration: none;
+    color: var(--txt-color);
+    padding: 8px;
+    transition: all linear 0.15s;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn.disable {
+    background-color: #ddd;
+    color: var(--txt-color);
+    opacity: 0.8;
+    cursor:default;
+    
+}
+
+.btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor:default;
 }
 
 
-/* thhuộc tính sau chung */
+/* -------------------- */
 
-
-/* end */
-
-:root {
-    --height-navbar: 50px;
+#main {
+    /* background-color: #333; */
 }
 
 .header {
@@ -25,15 +56,13 @@ html {
     right: 0;
     height: var(--height-navbar);
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 80px;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     position: fixed;
     z-index: 10;
-}
-
-#main {
-    background-color: #ddd;
 }
 
 .header__img {
@@ -45,7 +74,8 @@ html {
     list-style: none;
     display: flex;
     align-items: center;
-    margin-left: 50px;
+    margin-right: 70px;
+    /* flex: 1; */
 }
 
 .navBar a {
@@ -54,14 +84,38 @@ html {
     padding: 0 16px;
     line-height: var(--height-navbar);
     color: #000;
+    text-transform: uppercase;
     border-radius: 2px;
     overflow: hidden;
     transition: all linear 0.2s;
 }
 
 .navBar a:hover {
-    background-color: #ccc;
+    background-color: var(--primary-color);
+    color: #fff;
+}
 
+.header__search {
+    line-height: var(--height-navbar);
+    text-align: right;
+    flex: 1;
+}
+
+.header__bag,
+.header__search-icon{
+    display: inline-block;
+    color: var(--txt-color);
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.header__search-box{
+    font-size: 16px;
+    padding: 8px 12px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    outline: none;
 }
 
 /* Css slider */
@@ -82,13 +136,16 @@ html {
 }
 
 /* CSS menu */
+.wide .menu-list {
+    margin: 0 -8px;
+}
 
 .content__title {
     padding: 36px 0;
     text-align: center;
     font-weight: 500;
     color: #fff;
-    background-color: rgb(255, 0, 0);
+    background-color: #333;
 }
 
 .menu-list__title {
@@ -101,33 +158,41 @@ html {
     background-color: #ccc;
     flex: 1;
     text-align: center;
-    border: #ddd 1px solid;
 }
 
-.item {
-    display: flex;
-    align-items: center;
-    border-bottom: 16px solid #fff;
+.menu-list__category ~ .menu-list__category {
+    border-left: #ddd 1px solid;
+}
+
+.wide .item {
+    position: relative;
+    padding: 0 8px;
+    margin-bottom: 16px;
+    min-height: 250px;
 }
 
 .item__img {
-    width: 200px;
+    width: 317px;
+    height: 275px;
     vertical-align: middle;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transition: all linear 0.3s;
 }
 
 .item__content {
     background-color: #f1f1f1;
-    flex: 1;
-    height: 200px;
+    min-height: 280px;
 }
 
 .item__content p {
-    margin: 8px 20px;
+    padding: 16px 20px 0;
     font-size: 18px;
 }
 
 .food-name {
     font-weight: bold;
+    font-size: 18px;
 }
 
 .price {
@@ -139,40 +204,40 @@ html {
 }
 
 .oder {
-    margin: 0 70px;
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .order__option {
-    padding: 4px 8px;
+    padding: 6px 8px;
     display: inline-block;
+    font-size: 16px;
     width: 30px;
     height: 30px;
     text-align: center;
     border-radius: 50%;
 }
 
-.decrease {
-    cursor: pointer;
+.decrease,
+.increase {
     background-color: #ccc;
 }
 
 .quantity {
 }
 
-.increase {
-    cursor: pointer;
-    background-color: #ccc;
-
-}
-
 .btn-order {
     display: block;
-    margin: 12px 0 0 12px;
-    padding: 4px 8px;
+    margin: 12px 0 0 15px;
+    padding: 8px;
     border: none;
+    border-radius: 2px;
     background-color: #ccc;
     cursor: pointer;
 }
+
 
     /*phần content and price list của menu  content-mailingaddress*/
 
@@ -381,17 +446,43 @@ footer .footer_container .content .about p{
     color: #999;
     text-decoration: none;
 }
+/* CSS chuyển trang */
+.move-pages {
+    text-align: center;
+    padding-bottom: 16px; 
+}
 
+.move-pages span {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 50%;
+}
 
+.move-pages i {
+    font-size: 12px;
+}
 
+.pages__btn-back {
+    background-color: #fff !important;
+}
 
+/* CSS page-2 */
+.food-list {
+    /* display: none; */
+}
 
+.food-list .page-1 {
+    /* display: none; */
+}
 
+.food-list  .page-2 {
+    display: none;
+}
 
+.drink-list {
+    display: none;
+}
 
-
-
-
-
-
-
+.drink-list .page-2 {
+    display: none;
+}
