@@ -93,6 +93,5 @@ for (let i = 0; i < btnDecreases.length ; i++) {
         else
         btnDecreases[i].classList.add('disable');
         btnIncreases[i].classList.remove('disable');
-    })
-    
+    }) 
 }
