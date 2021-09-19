@@ -15,11 +15,14 @@ html {
     --txt-color: #333;
 }
 
+/* CSS chung */
+
 .btn {
     border: none;
     text-decoration: none;
     color: var(--txt-color);
-    padding: 8px;
+    padding: 10px 12px;
+    border-radius: 4px;
     transition: all linear 0.15s;
 }
 
@@ -46,10 +49,7 @@ html {
 
 /* -------------------- */
 
-#main {
-    /* background-color: #333; */
-}
-
+/* CSS header */
 .header {
     top: 0;
     left: 0;
@@ -62,7 +62,7 @@ html {
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     position: fixed;
-    z-index: 10;
+    z-index: 1;
 }
 
 .header__img {
@@ -126,7 +126,7 @@ html {
 }
 
 .slider {
-    margin-top: var(--height-navbar);
+    margin-top: calc(var(--height-navbar) - 1px);
     
 }
 
@@ -168,21 +168,23 @@ html {
     position: relative;
     padding: 0 8px;
     margin-bottom: 16px;
-    min-height: 250px;
 }
 
 .item__img {
     width: 317px;
     height: 275px;
     vertical-align: middle;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    transform: scale(1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     transition: all linear 0.3s;
 }
 
 .item__content {
     background-color: #f1f1f1;
-    min-height: 280px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    min-height: 250px;
 }
 
 .item__content p {
@@ -195,19 +197,15 @@ html {
     font-size: 18px;
 }
 
-.price {
+/* .price {
 
-}
-
-.promotion {
-
-}
+} */
 
 .oder {
     position: absolute;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 20px;
+    text-align: center;
+    left: 16%;
 }
 
 .order__option {
@@ -226,16 +224,23 @@ html {
 }
 
 .quantity {
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    text-align: center;
+    background-color: #f1f1f1;
 }
 
 .btn-order {
-    display: block;
-    margin: 12px 0 0 15px;
-    padding: 8px;
-    border: none;
-    border-radius: 2px;
+    margin-top: 16px;
+    margin-left: -4px;
     background-color: #ccc;
-    cursor: pointer;
+}
+
+.btn-add-cart {
+    margin: 16px 0 0 12px;
+    background-color: #ccc;
 }
 
 /* CSS chuyển trang */
@@ -259,16 +264,13 @@ html {
 }
 
 /* CSS page-2 */
-.food-list {
-    /* display: none; */
-}
-
-.food-list .page-1 {
-    /* display: none; */
-}
+/* .food-list {
+    
+} */
 
 .food-list  .page-2 {
     display: none;
+
 }
 
 .drink-list {
@@ -279,6 +281,10 @@ html {
     display: none;
 }
 
+.drink-list .item__content {
+    min-height: 200px;
+}
+
 
 /*phần content and price list của menu  content-mailingaddress*/
 
@@ -287,19 +293,28 @@ html {
     margin-top: 64px;
 }
 
-.content .content-mailingaddress{
-  margin-top: 32px;
+.content .content-mailingaddress {
+  margin-top: 48px;
 }
 
-.content-infor  .content-iteam{
-    margin: 0 16px;
+.content__contact {
+    margin-bottom: 12px;
+    padding: 8px 0;
+    font-size: 20px;
+}
+
+.content-icon {
+    margin-right: 8px;
     font-size: 24px;
 }
 
-.content-infor .content-waring{
-    margin: 12px 16px;
-    padding: 8px 24px;
-    font-size: 20px;
+.content__contact a {
+    text-decoration: none;
+    color: #427deb;
+}
+
+.content__contact a:hover {
+    color: var(--primary-color);
 }
 
 .content_form input{
@@ -311,11 +326,8 @@ html {
 }
 
 .content_form .btn-send{
-    width: 120px ;    
-    padding: 12px 8px;
-    border: none;
-    display: block;
-    cursor: pointer;
+    width: 120px;    
+    padding: 12px;
     float: right;
 }
 
@@ -331,17 +343,26 @@ footer{
     color: #fff;
 }
 
-.content ul {
+.footer__contact ul {
     list-style: none;
 }
 
-.footer_container{
-    padding: 48px 0;
+.footer__contact a {
+    text-decoration: none;
+    color: #fff;
 }
 
-.footer__about {
-    
+.footer__contact a:hover {
+    color: var(--primary-color);
 }
+
+.footer_container{
+    padding: 48px 0 24px;
+}
+
+/* .footer__about {
+    
+} */
 
 .footer__descrept {
     margin: 8px 0;
@@ -355,27 +376,27 @@ footer{
     display: block;
     margin-right: 12px;
     font-size: 32px;
-    color: #fff;
+    color: darkgray;
 }
 
 .icon-fb:hover {
-    color: #0000ff;
+    color: #1850ca;
 }
 
 .icon-tw:hover {
-    color: #427deb;
+    color: #00B6F1;
 }
 
 .icon-inst:hover {
-    color: yellow;
+    color: #2C6A93;
 }
 
 .icon-ytb:hover {
-    color: #ff0000;
+    color: #f00;
 }
 
-.footer__info {
-}
+/* .footer__info {
+} */
 
 .footer__info  li {
     padding: 8px 0;
@@ -385,3 +406,138 @@ footer{
     font-size: 20px;
     margin-right: 6px;
 }
+
+.footer__contact-address,
+.footer__contact-social {
+    text-align: center;
+}
+
+.coppyright {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 36px;
+}
+
+/* CSS Modal */
+.modal {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    
+}
+
+.modal.close {
+    display: none;
+}
+
+.form-order {
+    position: relative;
+    min-width: 400px;
+    min-height: 200px;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 4px;
+    animation: fadeIn linear 0.2s;
+}
+
+.form-orderclose {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    padding: 4px 8px;
+    border-radius: 50%;
+    color: #777;
+}
+
+.form-order__header-title {
+    text-align: center;
+    color: var(--txt-color);
+    margin: 12px 0;
+    text-transform: uppercase;
+}
+
+.form-order__form span {
+    display: inline-block;
+    min-width: 60px;
+}
+
+.form-order__form input {
+    width: 100%;
+    margin: 4px 0 12px;
+    padding: 4px 8px;
+}
+
+.price-money {
+    margin-bottom: 12px;
+}
+
+.btn-order-form {
+    transform: translateX(180%);
+}
+
+
+/* Hiệu ứng */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rightToLeftDrink {
+    from {
+        opacity: 0;
+        transform: translate(100%, calc(-100% - 100px));
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, calc(-100% - 100px));
+    }
+}
+
+@keyframes rightToLeftFood {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes leftToRightFood {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes leftToRightDrink {
+    from {
+        opacity: 1;
+        transform: translateY(calc(-100% - 100px));
+    }
+    to {
+        opacity: 0;
+        transform: translate(100%, calc(-100% - 100px));
+    }
+}
+
+
