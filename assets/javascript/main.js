@@ -5,13 +5,18 @@ var btnOrders = $$(".btn-order");
 var Modal = $(".modal");
 var btnCloseFormOrder = $(".form-orderclose");
 var containerOderForm = $(".form-order");
-var btnDrink = $(".drink");
-var btnFood = $(".food");
-var drinkList = $(".drink-list");
-var foodList = $(".food-list");
+var btnMenues = $$(".btn-menu");
+var menuLists = $$(".menu-lists");
 var btnDecreases = $$(".decrease");
 var boxQuantitys = $$(".quantity");
 var btnIncreases = $$(".increase");
+var btnMovePages = $$(".move-pages__btn");
+// var btnMovePagesDrinks = $$(".drink-list .move-pages__btn");
+var foodPageMenues = $$(".food-list .page-menu");
+// var drinkPageMenues = $$("drink-list. .page-menu");
+var btnBackPage = $('.page__btn-back');
+var btnNextPage = $('.page__btn-next');
+
 
 
 //Hàm hiển thị modal;
@@ -62,12 +67,36 @@ function showFoodList() {
 }
 
 //JS khi chuyển menu;
-btnDrink.addEventListener('click', showDrinkList);
-btnFood.addEventListener('click', showFoodList);
+btnMenues.forEach(function(btnMenu, index) {
+    btnMenu.addEventListener('click' , function() {
+        var menuItem = menuLists[index];
+        $('.btn-menu.active').classList.remove('active');
+        // btnMenu.classList.add('disable');
+        $('.menu-lists.menu-current').style.animation = 'leftToRight linear .3s';
+        setTimeout(function () {
+            $('.menu-lists.menu-current').classList.remove('menu-current');
+        },310);
+        menuItem.classList.add('menu-current');
+        menuItem.style.animation = 'leftToRightDrink linear .3s';
+    })
+});
 
 //JS chuyển trang;
-
-
+btnMovePages.forEach(function(btnMovePageFood , index){
+    btnMovePageFood.addEventListener('click', function() {
+        var foodPageMenue = foodPageMenues[index];
+        $('.move-pages__btn.active').classList.remove("active"); //Kiểm tra nếu nút đang active thì bỏ active;
+        this.classList.add("active");
+        $('.page-menu.page-current').classList.remove('page-current');
+        foodPageMenue.classList.add('page-current');
+        
+        if(index > 0) {
+            btnBackPage.classList.remove('disable');
+        }else {
+            btnBackPage.classList.add('disable');
+        }
+    })
+});
 
 
 //JS tăng giảm số lượng món;
