@@ -1,19 +1,19 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-var btnOrders = $$(".btn-order");
-var Modal = $(".modal");
-var btnCloseFormOrder = $(".form-orderclose");
-var containerOderForm = $(".form-order");
-var btnMenues = $$(".btn-menu");
-var menuLists = $$(".menu-lists");
-var btnDecreases = $$(".decrease");
-var boxQuantitys = $$(".quantity");
-var btnIncreases = $$(".increase");
-var btnMovePages = $$(".move-pages__btn");
+var btnOrders = $$(".btn-order"); //lấy ds nút đặt hàng;
+var Modal = $(".modal"); //lấy lớp phủ;
+var btnCloseFormOrder = $(".form-orderclose"); //lấy nút đóng form đặt hàng
+var containerOderForm = $(".form-order"); //lấy form đặt hàng
+var btnMenues = $$(".btn-menu"); //lấy danh sách nút menu
+var menuLists = $$(".menu-lists"); //lấy danh sách loại đồ bán (đồ ăn và nước uống)
+var btnDecreases = $$(".decrease"); //lấy ds nút giảm
+var boxQuantitys = $$(".quantity"); //lấy ds box số lượng hiển thị
+var btnIncreases = $$(".increase"); //lấy ds nút tăng
+var btnMovePages = $$(".move-pages__btn"); //ds nút chuyển trang;
 // var btnMovePagesDrinks = $$(".drink-list .move-pages__btn");
-var foodPageMenues = $$(".food-list .page-menu");
-// var drinkPageMenues = $$("drink-list. .page-menu");
+var foodPageMenues = $$(".food .page-menu");
+var drinkPageMenues = $$(".drink .page-menu");
 var btnBackPage = $('.page__btn-back');
 var btnNextPage = $('.page__btn-next');
 
@@ -40,44 +40,20 @@ Modal.addEventListener("click", hiddenFormOrder);
 //Ngăn sự kiện nổi bọt (khi bấm vào form đặt hàng modal không bị ẩn đi);
 containerOderForm.addEventListener("click", function(event){
     event.stopPropagation();
-})
+});
 
 //Hàm hiển thị danh sách đồ uống
-function showDrinkList() {
-    btnDrink.classList.add('active');
-    btnFood.classList.remove('active');
-    drinkList.style.display = "block";
-    foodList.style.animation = 'rightToLeftFood linear .3s';
-    drinkList.style.animation = 'rightToLeftDrink linear .3s';
-    setTimeout(function () {
-        foodList.style.display = "none";
-    },310);
-}
-
-//Hàm hiển thị đồ ăn;
-function showFoodList() {
-    btnDrink.classList.remove('active');
-    btnFood.classList.add('active');
-    foodList.style.display = "block";
-    foodList.style.animation = 'leftToRightFood linear .3s';
-    drinkList.style.animation = 'leftToRightDrink linear .3s';
-    setTimeout(function () {
-        drinkList.style.display = "none";
-    },300);
-}
-
-//JS khi chuyển menu;
 btnMenues.forEach(function(btnMenu, index) {
-    btnMenu.addEventListener('click' , function() {
-        var menuItem = menuLists[index];
+    var menuItem = menuLists[index];
+    btnMenu.addEventListener('click', function() {
         $('.btn-menu.active').classList.remove('active');
-        // btnMenu.classList.add('disable');
-        $('.menu-lists.menu-current').style.animation = 'leftToRight linear .3s';
-        setTimeout(function () {
+        this.classList.add('active');
+        $('.menu-lists.menu-current').style.animation = 'showHidden linear .2s';
+        setTimeout(function(){
             $('.menu-lists.menu-current').classList.remove('menu-current');
-        },310);
-        menuItem.classList.add('menu-current');
-        menuItem.style.animation = 'leftToRightDrink linear .3s';
+            menuItem.classList.add('menu-current');
+        },200);
+        menuItem.style.animation = 'hiddenShow linear .2s';
     })
 });
 
@@ -85,10 +61,13 @@ btnMenues.forEach(function(btnMenu, index) {
 btnMovePages.forEach(function(btnMovePageFood , index){
     btnMovePageFood.addEventListener('click', function() {
         var foodPageMenue = foodPageMenues[index];
+        var drinkPageMenue = drinkPageMenues[index];
         $('.move-pages__btn.active').classList.remove("active"); //Kiểm tra nếu nút đang active thì bỏ active;
         this.classList.add("active");
-        $('.page-menu.page-current').classList.remove('page-current');
+        $('.food .page-menu.page-current').classList.remove('page-current');
         foodPageMenue.classList.add('page-current');
+        $('.drink .page-menu.page-current').classList.remove('page-current');
+        drinkPageMenue.classList.add('page-current');
         
         if(index > 0) {
             btnBackPage.classList.remove('disable');
@@ -97,6 +76,8 @@ btnMovePages.forEach(function(btnMovePageFood , index){
         }
     })
 });
+
+
 
 
 //JS tăng giảm số lượng món;
