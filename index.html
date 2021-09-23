@@ -13,65 +13,71 @@
 <body>
     <div id="main">
         <header class="header">
-            <ul class="navBar">
-                <li><a href="">Home</a></li>
-                <li><a href="">Menu</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-            <img src="./assets/images/logo.png" alt="LOGO" class="header__img">
-            <div class="header__search">
-                <input type="text" class="header__search-box" placeholder="Bạn muốn ăn gì?">
-                <i class="header__search-icon fas fa-search"></i>
-                <!-- cartLayout -->
-                <div class="header__bag">
-                    <div class="header__bag-cart">
-                        <i class="header__bag-icon fas fa-cart-arrow-down"></i>
-                        <span class="header__bag-notice">3</span>
-
-                        <div class="form-cart">
-                            <ul class="form-cart__list">
-                                <h2 class="form-cart__title">Giỏ hàng của bạn</h2>
-                                <div class="form-cart__item">
-                                    <img class="form-cart__img" src="./assets/images/banhtrangtron.jpg" alt="Bánh tráng trộn">
-                                    <div class="form-cart__content">
-                                        <p class="form-cart__content-title">Bánh tráng trộn</p>
-                                        <p>Số lượng: <span class="form-cart__content-quantyti">5</span></p>
-                                        <p>Thành tiền: <span class="sum-money">100.000</span></p>
-                                        <button class="btn btn-order btn-form-cart">Đặt hàng</button>
-                                    </div>
-                                </div>
-        
-                                <div class="form-cart__item">
-                                    <img class="form-cart__img" src="./assets/images/banhtrangtron.jpg" alt="Bánh tráng trộn">
-                                    <div class="form-cart__content">
-                                        <p class="form-cart__content-title">Bánh tráng trộn</p>
-                                        <p>Số lượng: <span class="form-cart__content-quantyti">5</span></p>
-                                        <p>Thành tiền: <span class="sum-money">100.000</span></p>
-                                        <button class="btn btn-order btn-form-cart">Đặt hàng</button>
-                                    </div>
-                                </div>
-        
-                                <div class="form-cart__item">
-                                    <img class="form-cart__img" src="./assets/images/banhtrangtron.jpg" alt="Bánh tráng trộn">
-                                    <div class="form-cart__content">
-                                        <p class="form-cart__content-title">Bánh tráng trộn</p>
-                                        <p>Số lượng: <span class="form-cart__content-quantyti">5</span></p>
-                                        <p>Thành tiền: <span class="sum-money">100.000</span></p>
-                                        <button class="btn btn-order btn-form-cart">Đặt hàng</button>
-                                    </div>
-                                </div>
-        
-                                <div class="form-cart__item">
-                                    <img class="form-cart__img" src="./assets/images/banhtrangtron.jpg" alt="Bánh tráng trộn">
-                                    <div class="form-cart__content">
-                                        <p class="form-cart__content-title">Bánh tráng trộn</p>
-                                        <p>Số lượng: <span class="form-cart__content-quantyti">5</span></p>
-                                        <p>Thành tiền: <span class="sum-money">100.000</span></p>
-                                        <button class="btn btn-order btn-form-cart">Đặt hàng</button>
-                                    </div>
-                                </div>
-                            </ul>
+            <div class="header__container grid wide row">
+                <div class="col l-4 m-6 s-0">
+                    <ul class="navBar  grid row">
+                        <li class="l-4"><a href="">Home</a></li>
+                        <li class="l-4"><a href="">Menu</a></li>
+                        <li class="l-4"><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="header__logo col l-2 m-0 s-0">
+                    <img src="./assets/images/logo.png" alt="LOGO" class="header__logo-img">
+                </div>
+                <div class="header__search col l-8 m-6 s-11">
+                    <input type="text" class="header__search-box" placeholder="Bạn muốn ăn gì?">
+                    <i class="header__search-icon fas fa-search"></i>
+                    <!-- cartLayout -->
+                    <div class="header__bag">
+                        <div class="header__bag-cart">
+                            <i class="header__bag-icon fas fa-cart-arrow-down"></i>
+                            <span class="header__bag-notice">3</span>
     
+                            <div class="form-cart">
+                                <ul class="form-cart__list">
+                                    <h2 class="form-cart__title">Giỏ hàng của bạn</h2>
+                                    <div class="form-cart__item">
+                                        <img class="form-cart__img" src="./assets/images/banhtrangtron.jpg" alt="Bánh tráng trộn">
+                                        <div class="form-cart__content">
+                                            <p class="form-cart__content-title">Bánh tráng trộn</p>
+                                            <p>Số lượng: <span class="form-cart__content-quantyti">5</span></p>
+                                            <p>Thành tiền: <span class="sum-money">100.000</span></p>
+                                            <button class="btn btn-order btn-form-cart">Đặt hàng</button>
+                                        </div>
+                                    </div>
+            
+                                    <div class="form-cart__item">
+                                        <img class="form-cart__img" src="./assets/images/banhtrangtron.jpg" alt="Bánh tráng trộn">
+                                        <div class="form-cart__content">
+                                            <p class="form-cart__content-title">Bánh tráng trộn</p>
+                                            <p>Số lượng: <span class="form-cart__content-quantyti">5</span></p>
+                                            <p>Thành tiền: <span class="sum-money">100.000</span></p>
+                                            <button class="btn btn-order btn-form-cart">Đặt hàng</button>
+                                        </div>
+                                    </div>
+            
+                                    <div class="form-cart__item">
+                                        <img class="form-cart__img" src="./assets/images/banhtrangtron.jpg" alt="Bánh tráng trộn">
+                                        <div class="form-cart__content">
+                                            <p class="form-cart__content-title">Bánh tráng trộn</p>
+                                            <p>Số lượng: <span class="form-cart__content-quantyti">5</span></p>
+                                            <p>Thành tiền: <span class="sum-money">100.000</span></p>
+                                            <button class="btn btn-order btn-form-cart">Đặt hàng</button>
+                                        </div>
+                                    </div>
+            
+                                    <div class="form-cart__item">
+                                        <img class="form-cart__img" src="./assets/images/banhtrangtron.jpg" alt="Bánh tráng trộn">
+                                        <div class="form-cart__content">
+                                            <p class="form-cart__content-title">Bánh tráng trộn</p>
+                                            <p>Số lượng: <span class="form-cart__content-quantyti">5</span></p>
+                                            <p>Thành tiền: <span class="sum-money">100.000</span></p>
+                                            <button class="btn btn-order btn-form-cart">Đặt hàng</button>
+                                        </div>
+                                    </div>
+                                </ul>
+        
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,7 +108,7 @@
                     <!-- page 1 -->
                     <div class="menu-list__item row page-menu page-current">
                         <!-- món 1 -->
-                        <div class="item col l-3">
+                        <div class="item col l-3 m-6 s-12">
                             <img src="./assets/images/item1.jpg" alt="Cá viên chiên" class="item__img">
                             <div class="item__content">
                                 <p class="food-name">Cá viên chiên</p>
@@ -120,7 +126,7 @@
                             </div>
                         </div>
     
-                        <div class="item col l-3">
+                        <div class="item col l-3 m-6 s-12">
                             <img src="./assets/images/khoaitaylac.jpg" alt="Khoai tây lắc" class="item__img">
                             <div class="item__content">
                                 <p class="food-name">Khoai tây lắc phô mai</p>
@@ -138,7 +144,7 @@
                             </div>
                         </div>
     
-                        <div class="item col l-3">
+                        <div class="item col l-3 m-6 s-12">
                             <img src="./assets/images/banhgaolacphomai.jpg" alt="Bánh gạo lắc" class="item__img">
                             <div class="item__content">
                                 <p class="food-name">Bánh gạo lắc phô mai</p>
@@ -156,7 +162,7 @@
                             </div>
                         </div>
     
-                        <div class="item col l-3">
+                        <div class="item col l-3 m-6 s-12">
                             <img src="./assets/images/holochien.jpg" alt="Hồ lô chiên" class="item__img">
                             <div class="item__content">
                                 <p class="food-name">Hồ lô xiên</p>
@@ -174,7 +180,7 @@
                             </div>
                         </div>
     
-                        <div class="item col l-3">
+                        <div class="item col l-3 m-6 s-12">
                             <div><img src="./assets/images/thitnuong.jpg" alt="Thịt nướng" class="item__img"></div>
                             <div class="item__content">
                                 <p class="food-name">Thịt xiên nướng</p>
@@ -1257,7 +1263,7 @@
                  <span class="move-pages__btn btn">2</span>
                  <span class="move-pages__btn btn">3</span>
                  <span class="move-pages__btn btn">4</span>
-                 <span class="btn page__btn-next"><i class="fas fa-angle-double-right"></i></span>
+                 <span class="page__btn-next"><i class="fas fa-angle-double-right"></i></span>
              </div>
         </div>
 
