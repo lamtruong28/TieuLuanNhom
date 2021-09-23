@@ -2,6 +2,8 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 var btnOrders = $$(".btn-order"); //lấy ds nút đặt hàng;
+var btnAddCarts = $$(".btn-add-cart"); //ds nút thêm giở hàng
+var noticeQuantity = $('.header__bag-notice'); //số lượng thông báo ở giỏ hàng;
 var Modal = $(".modal"); //lấy lớp phủ;
 var btnCloseFormOrder = $(".form-orderclose"); //lấy nút đóng form đặt hàng
 var containerOderForm = $(".form-order"); //lấy form đặt hàng
@@ -54,6 +56,18 @@ btnMenues.forEach(function(btnMenu, index) {
             $('.menu-lists.menu-current').classList.remove('menu-current');
             menuItem.classList.add('menu-current');
         },200);
+        //xử lý đưa về trang 1;
+        $('.move-pages__btn.active').classList.remove("active");
+        btnMovePages[0].classList.add('active');
+        $('.food .page-menu.page-current').classList.remove('page-current');
+        foodPageMenues[0].classList.add('page-current');
+        $('.drink .page-menu.page-current').classList.remove('page-current');
+        drinkPageMenues[0].classList.add('page-current');
+        btnBackPage.classList.add('disable');
+        btnNextPage.classList.remove('disable');
+        
+        i = j = k = 1;
+        x = y = z = index - 1;
     })
 });
 
@@ -72,8 +86,8 @@ btnMovePages.forEach(function(btnMovePage , index){
         $('.drink .page-menu.page-current').classList.remove('page-current');
         drinkPageMenu.classList.add('page-current');
         
-        i = j = index + 1;
-        x = y = index - 1;
+        i = j = k = index + 1;;
+        x = y = z = index - 1;
         if(index > 0)
             btnBackPage.classList.remove('disable');
         else 
@@ -87,14 +101,16 @@ btnMovePages.forEach(function(btnMovePage , index){
 });
 
 // js nút tới:
-var i=1,j=1;
+var i=1,j=1,k=1;
 btnNextPage.addEventListener('click', function() {
-    x=y=i-1;
+    x=y=z=i-1;
     if(i < 4){
         $('.move-pages__btn.active').classList.remove("active");
         btnMovePages[i++].classList.add("active");
         $('.food .page-menu.page-current').classList.remove('page-current');
         foodPageMenues[j++].classList.add('page-current');
+        $('.drink .page-menu.page-current').classList.remove('page-current');
+        drinkPageMenues[k++].classList.add('page-current');
         btnBackPage.classList.remove('disable');
         if(i == 4)
             btnNextPage.classList.add('disable');
@@ -104,16 +120,18 @@ btnNextPage.addEventListener('click', function() {
 });
 
 // JS nút lùi trang:
-var x,y;
+var x,y,z;
 btnBackPage.addEventListener('click', function() {
-    i=j=x+1;
+    i=j=k=x+1;
     if(x >= 0){
         $('.move-pages__btn.active').classList.remove("active");
         btnMovePages[x--].classList.add("active");
         $('.food .page-menu.page-current').classList.remove('page-current');
         foodPageMenues[y--].classList.add('page-current');
+        $('.drink .page-menu.page-current').classList.remove('page-current');
+        drinkPageMenues[z--].classList.add('page-current');
         btnBackPage.classList.remove('disable');
-        if(x == 0)
+        if(x == -1)
             btnBackPage.classList.add('disable');
         else
             btnBackPage.classList.remove('disable');
@@ -150,3 +168,11 @@ for (let i = 0; i < btnDecreases.length ; i++) {
         btnIncreases[i].classList.remove('disable');
     }) 
 }
+
+// Js sự kiện bấm nút thêm vào giỏ hàng;
+btnAddCarts.forEach(function(btnAddCart, index){
+    btnAddCart.addEventListener('click',function() {
+        if( boxQuantitys[index].value !=0 )
+            noticeQuantity.value++;
+    });
+});
