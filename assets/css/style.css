@@ -8,6 +8,7 @@ html {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     color: var(--txt-color);
+    scroll-behavior: smooth;
 }
 :root {
     --primary-color: #eb522c;
@@ -70,6 +71,14 @@ html {
     padding: 0 20px;
 }
 
+.menu-mobile:hover {
+    background-color: #fff;
+}
+
+.menu-mobile:hover .menu-mobile__icon {
+    color: var(--txt-color);
+}
+
 .menu-mobile__icon {
     color: #fff;
     font-size: 20px;
@@ -106,6 +115,7 @@ html {
     flex: 1;
 }
 
+.navBar-mobile__search-box,
 .header__search-box{
     font-size: 16px;
     padding: 8px 12px;
@@ -613,6 +623,50 @@ footer{
 }
 
 
+/* CSS MENU MOBILE */
+.navBar-mobile {
+    position: fixed;
+    top: var(--height-navbar);
+    left: 0;
+    width: 60%;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: FadeInLeftToRight linear 0.25s;
+    z-index: 5;
+}
+
+.navBar-mobile.close {
+    display: none;
+}
+
+.navBar-mobile a {
+    display: block;
+    text-decoration: none;
+    padding: 12px ;
+    color: var(--txt-color);
+    border-bottom: 1px solid #ccc;
+}
+
+.navBar-mobile__search {
+    padding: 12px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.navBar-mobile__search .btn-search {
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.navBar-mobile__search-icon {
+    color: var(--txt-color);
+    
+}
+
 /* Hiệu ứng */
 @keyframes fadeIn {
     from {
@@ -674,10 +728,26 @@ footer{
 @keyframes FadeInLeftToRight {
     from {
         opacity: 0;
-        transform: translate(100%, 0);
+        transform: translateX(-100%)
     }
     to {
         opacity: 1;
         transform: translate(0);
     }
 }
+
+
+/* Responsive trên Mobile */
+
+@media (max-width: 46.1875em) {
+    .form-cart{
+        width: 55vh;
+        right: -8px;
+        transform-origin: calc(100% - 30px) top;
+    }
+
+    .form-cart::before{
+        right: 7px;
+    }
+}
+

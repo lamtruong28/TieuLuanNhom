@@ -14,15 +14,15 @@
     <div id="main">
         <header class="header">
             <div class="header__container grid wide row">
-                <!-- menu bars trên mobile -->
+                <!--button menu bars trên mobile -->
                 <div class="menu-mobile l-0 m-0">
                     <i class="menu-mobile__icon fas fa-bars"></i>
                 </div>
                 <div class="col l-4 m-6 s-0">
                     <ul class="navBar  grid row">
-                        <li class="l-4"><a href="">Home</a></li>
-                        <li class="l-4"><a href="">Menu</a></li>
-                        <li class="l-4"><a href="">Contact</a></li>
+                        <li class="l-4"><a href="#">Home</a></li>
+                        <li class="l-4"><a href="#container">Menu</a></li>
+                        <li class="l-4"><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="header__logo col l-4 m-0 s-0">
@@ -1260,7 +1260,7 @@
              </div>
         </div>
 
-        <h1 class="content__title">Contact</h1>
+        <h1 id="contact" class="content__title">Contact</h1>
         <div class="content grid wide">
             <h3 class="content_title-subtitle">Mọi thắc mắc phản hồi, vui lòng liên hệ chúng tôi qua:</h3>
             <div class="content-mailingaddress grid wide row">
@@ -1368,6 +1368,15 @@
             </div>
         </div>
     </div> 
+    <ul class="navBar-mobile close">
+        <li class="navBar-mobile__search">
+            <input type="text" class="navBar-mobile__search-box" placeholder="Bạn muốn ăn gì?">
+            <a class="btn-search" href=""><i class="navBar-mobile__search-icon fas fa-search"></i></a>
+        </li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#container">MENU</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
     <script src="./assets/javascript/main.js"></script>
 </body>
 </html>

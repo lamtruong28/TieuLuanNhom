@@ -17,6 +17,10 @@ var foodPageMenues = $$(".food .page-menu"); //ds trang đồ ăn;
 var drinkPageMenues = $$(".drink .page-menu"); //ds trang đồ uống
 var btnBackPage = $('.page__btn-back'); //nút lùi trang
 var btnNextPage = $('.page__btn-next'); //nút tiến trang
+// MOBIlE:
+var menuMobile = $('.menu-mobile');
+var menubarMobile = $('.navBar-mobile');
+var menuMobileItems = $$('.navBar-mobile a');
 
 
 //Hàm hiển thị modal;
@@ -27,6 +31,7 @@ function showFormOrder() {
 //Hàm ẩn modal
 function hiddenFormOrder() {
     Modal.classList.add('close');
+    menubarMobile.classList.add('close');
 }
 
 //bắt sự kiện khi nhấn nút đặt hàng
@@ -176,3 +181,20 @@ btnAddCarts.forEach(function(btnAddCart, index){
             noticeQuantity.value++;
     });
 });
+
+// JS menu mobile:
+
+menuMobile.addEventListener('click', function() {
+    menubarMobile.classList.remove('close');
+    Modal.classList.remove('close');
+    containerOderForm.style.display = 'none';
+})
+
+//Đóng menu khi chọn item:
+
+for(const menuMobileItem of menuMobileItems){
+    menuMobileItem.addEventListener('click', function() {
+        menubarMobile.classList.add('close');
+        Modal.classList.add('close');
+    });
+}
