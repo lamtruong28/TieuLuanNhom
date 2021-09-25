@@ -14,6 +14,10 @@
     <div id="main">
         <header class="header">
             <div class="header__container grid wide row">
+                <!-- menu bars trên mobile -->
+                <div class="menu-mobile l-0 m-0">
+                    <i class="menu-mobile__icon fas fa-bars"></i>
+                </div>
                 <div class="col l-4 m-6 s-0">
                     <ul class="navBar  grid row">
                         <li class="l-4"><a href="">Home</a></li>
@@ -21,12 +25,12 @@
                         <li class="l-4"><a href="">Contact</a></li>
                     </ul>
                 </div>
-                <div class="header__logo col l-2 m-0 s-0">
+                <div class="header__logo col l-4 m-0 s-0">
                     <img src="./assets/images/logo.png" alt="LOGO" class="header__logo-img">
                 </div>
                 <div class="header__search col l-8 m-6 s-11">
-                    <input type="text" class="header__search-box" placeholder="Bạn muốn ăn gì?">
-                    <i class="header__search-icon fas fa-search"></i>
+                    <input type="text" class="header__search-box s-0" placeholder="Bạn muốn ăn gì?">
+                   <a href="https://www.google.com.vn/?hl=vi" class="s-0"> <i class="header__search-icon fas fa-search"></i></a>
                     <!-- cartLayout -->
                     <div class="header__bag">
                         <div class="header__bag-cart">
@@ -1260,7 +1264,7 @@
         <div class="content grid wide">
             <h3 class="content_title-subtitle">Mọi thắc mắc phản hồi, vui lòng liên hệ chúng tôi qua:</h3>
             <div class="content-mailingaddress grid wide row">
-                <div class="content-infor col l-6">
+                <div class="content-infor col l-6 m-12 s-12">
                     <p class="content__contact" >
                         <i class="fas fa-map-marker-alt content-icon"></i>
                         <a href="https://www.google.com/maps/place/390+Ho%C3%A0ng+V%C4%83n+Th%E1%BB%A5,+Ph%C6%B0%E1%BB%9Dng+4,+T%C3%A2n+B%C3%ACnh,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.7976611,106.6545981,18z/data=!3m1!4b1!4m5!3m4!1s0x3175293687f92c3b:0xdb58b3a359d4e8e4!8m2!3d10.7976477!4d106.6559834">
@@ -1277,7 +1281,7 @@
                     </p>
                 </div>
 
-                <form action="" class="content_form col l-6">
+                <form action="xuly.php" class="content_form col l-6 m-12 s-12" method="POST">
                     <input type="text" class="content-name" placeholder="Name" required >      
                     <input type="email" class="content-email " placeholder="Email" required>                       
                     <input type="text" class="seen" placeholder="Message" required>
@@ -1293,7 +1297,7 @@
             </div>
             <div class="footer_container grid wide row">
                 <!-- bắt đầu nội dung liên hệ -->
-                <div class="footer__contact footer__contact-address col l-6">
+                <div class="footer__contact footer__contact-address col l-6 m-12 s-12">
                     <h2 class="">Thông Tin Liên Hệ</h2>
                     <ul class="footer__info">
                         <li>
@@ -1313,7 +1317,7 @@
                 <!-- kết thúc nội dung liên hệ -->
 
                 <!-- bắt đầu nội dung giới thiệu -->
-                <div class="footer__contact footer__contact-social col l-6">
+                <div class="footer__contact footer__contact-social col l-6 m-12 s-12">
                     <h2>Fanpage</h2>
                     <p class="footer__descrept">Theo dõi chúng tôi qua:</p>
                     <ul class="footer__social-icon">

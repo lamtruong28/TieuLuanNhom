@@ -47,7 +47,6 @@ html {
     cursor:default;
 }
 
-
 /* -------------------- */
 
 /* CSS header */
@@ -65,6 +64,15 @@ html {
     justify-content: space-between;
     align-items: center;
     line-height: var(--height-navbar);
+}
+
+.menu-mobile {
+    padding: 0 20px;
+}
+
+.menu-mobile__icon {
+    color: #fff;
+    font-size: 20px;
 }
 
 .header__logo {
@@ -148,6 +156,7 @@ html {
     right: -2px;
     font-size: 12px;
     text-align: center;
+    outline: none;
 }
 
 .header__bag-cart:hover .header__bag-notice {
@@ -315,15 +324,13 @@ html {
     font-size: 18px;
 }
 
-/* .price {
-
-} */
-
 .oder {
     position: absolute;
+    min-width: 250px;
     bottom: 20px;
     text-align: center;
-    left: 35px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .order__option {
