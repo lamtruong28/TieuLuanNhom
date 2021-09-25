@@ -187,7 +187,7 @@ btnAddCarts.forEach(function(btnAddCart, index){
 menuMobile.addEventListener('click', function() {
     menubarMobile.classList.remove('close');
     Modal.classList.remove('close');
-    containerOderForm.style.display = 'none';
+    containerOderForm.classList.add('close');
 })
 
 //Đóng menu khi chọn item:

@@ -587,6 +587,10 @@ footer{
     animation: fadeIn linear 0.2s;
 }
 
+.form-order.close {
+    display: none;
+}
+
 .form-orderclose {
     position: absolute;
     right: 4px;
