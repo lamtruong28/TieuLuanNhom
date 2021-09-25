@@ -351,6 +351,21 @@ html {
     height: 30px;
     text-align: center;
     border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+.order__option:hover {
+    background-color: var(--primary-color);
+    cursor: pointer;
+    color: #fff;
+}
+
+.order__option.disable {
+    background-color: #ddd;
+    color: var(--txt-color);
+    opacity: 0.7;
+    cursor:default;
 }
 
 .decrease,
@@ -579,9 +594,8 @@ footer{
 
 .form-order {
     position: relative;
-    min-width: 400px;
-    min-height: 200px;
-    padding: 24px;
+    min-height: 410px;
+    padding: 24px 48px;
     background-color: #fff;
     border-radius: 4px;
     animation: fadeIn linear 0.2s;
@@ -623,7 +637,9 @@ footer{
 }
 
 .btn-order-form {
-    transform: translateX(180%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
@@ -632,7 +648,7 @@ footer{
     position: fixed;
     top: var(--height-navbar);
     left: 0;
-    width: 60%;
+    width: 70%;
     background-color: #fff;
     text-align: center;
     border-radius: 4px;
@@ -752,6 +768,18 @@ footer{
 
     .form-cart::before{
         right: 7px;
+    }
+
+    .btn {
+        padding: 14px 12px;
+    }
+
+    .form-order {
+        width: 90%;
+    }
+
+    .item__img {
+        height: 240px;
     }
 }
 

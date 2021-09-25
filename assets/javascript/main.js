@@ -26,6 +26,7 @@ var menuMobileItems = $$('.navBar-mobile a');
 //Hàm hiển thị modal;
 function showFormOrder() {
     Modal.classList.remove('close');
+    containerOderForm.classList.remove('close');
 }
 
 //Hàm ẩn modal
